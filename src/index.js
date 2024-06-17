@@ -1,3 +1,0 @@
-alert(
-    Hi Sunshine
-)
