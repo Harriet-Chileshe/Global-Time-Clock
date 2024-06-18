@@ -45,9 +45,13 @@ select {
 h2 {
   font-size: 28px;
 }
+ h3{
+  font-size: 28px;
+ }
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 38px;
+  font-style: italic;
 }
 footer {
   text-align: center;
