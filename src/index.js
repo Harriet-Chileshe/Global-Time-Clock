@@ -28,7 +28,7 @@ function updateTime() {
   // Hong kong
   let hongKongElement = document.querySelector("#hong-kong");
   if (hongKongElement) {
-    let hongKongDateElement= hongKongElement.querySelector(".date");
+    let hongKongDateElement = hongKongElement.querySelector(".date");
     let hongkongTimeElement = hongKongElement.querySelector(".time");
     let hongKongTime = moment().tz("Asia/Hong_kong");
 
@@ -57,6 +57,21 @@ function updateCity(event) {
   )}</small></div>
   </div>
   `;
+}
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div class="city">
+  <div>
+  <h2>${cityName}</h2>
+  <div class="date">${cityTime.format("MMMM Do YYYYY")}</div>
+  </div>
+  <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format(
+    "A"
+  )}</small></div>
+  </div>`;
 }
 
 updateTime();
